@@ -1,0 +1,11 @@
+[package]
+name = "colony"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+anyhow = "1.0.66"
+bevy = { version = "0.9.1", features = ["dynamic"] }
+bevy_ecs_tilemap = "0.9.0"
+log = "0.4.17"
+tiled = "0.10.2"

@@ -1,0 +1,14 @@
+[workspace]
+resolver = "2"
+
+members = [
+    "crates/colony",
+]
+
+# Don't optimize our code in dev builds.
+[profile.dev]
+opt-level = 1
+
+# Optimize dependencies significantly, even in dev builds.
+[profile.dev.package."*"]
+opt-level = 3
