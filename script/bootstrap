@@ -1,0 +1,20 @@
+#!/bin/bash
+
+install() {
+    if [ "$(uname)" = "Darwin" ]; then
+        if ! type brew >/dev/null 2>&1; then
+            echo "Homebrew not found, can't automatically install dependencies..." >&2
+            echo "Please manually install '$1' and try again." >&2
+            exit 1
+        else
+            brew install "$1"
+        fi
+    fi
+}
+
+if [ "$(uname)" = "Darwin" ]; then
+    if ! type zld >/dev/null 2>&1; then
+        echo "zld not found, installing..."
+        install michaeleisel/zld/zld
+    fi
+fi
